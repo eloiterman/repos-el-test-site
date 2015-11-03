@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=10"> -->
+
+	<title>Evan Loiterman's prototype site inspired by madebyblock.com </title>
+<!-- dev notes:
+
+Features and modus apperendi 
+
+Progress:
+
+Completed(mostly)
+-Fixed position animated menu -done
+-Parallax effect- 90% complete -improve height and positioning
+-Ease targeted anchors- done
+
+to do:
+-add responsive flyout menu
+-add responsive css art gallery -phase one use third party plugging then add custom responsive UI from scratch time permitting
+-finish writting copy replace mock text
+-swap out stock city-scapes with cloud backgrounds
+-add new logo 
+-design animated process infochart -will this break the existing scroller? will this prompt selection of another tool or build custom scrollwork from scratch -do this LAST
+
+-Nice to have user toggled stylesheets -swap out themes.
+
+BUG -minor -improve responsive position of 'Hamburger' icon
+*/-->
+<!--CODE -->
+	
+    <!--JQUERY CORE  -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <!--anchor script 3rd party -this plays nicely with the parallax yeah!--> 
+    <script src="code/jquery.anchor.js" type="text/javascript"></script> 
+ 
+    
+   <!-- jquery UI TO DO get local-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  
+    
+	<!-- Parallax Script -3rd party -->
+    
+
+	<script src="code/jquery.nicescroll.min.js"></script>
+
+	<!-- HTML5 element support for IE6-8 -->
+	<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    
+    
+       <!-- CSS -->
+    
+    <!-- do not remove -it will break animating navbar download custom later -don't need the whole thing-->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+<!--ADD LOCAL LATER this is jQuery UI -I'm only using animate, so a custom mini version will be all I need -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+ 
+    
+  
+	<link rel="stylesheet" href="css/style.css">
+
+
+<!-- animated navbar -->
+<script>
+
+
+$(document).ready(function() {
+    
+//refinements-look to test for scroll positions to trigger more specific actions
+    var scrollTofirst=true;//condition for if at top
+     var showHide = true;
+   $('.showhide').click(function() {
+
+/*animate the navbar -this uses jquery UI for animate*/
+       if(showHide ){
+        
+           $('.rightnav').animate({'right':'+130px'},1000);
+           $('.navrow').animate( {backgroundColor: "#ccc"},1000);
+            showHide = false;
+       }
+      else{
+       $('.rightnav').animate({'right':'-300px'},1000);
+              $('.navrow').animate( {backgroundColor: "transparent"},1000);
+    showHide = true;
+       }
+
+   });
+    
+
+});
+
+  </script>
+
+
+</head>
+
+<body>
+ 
+<section class="navrowcontainer">
+    
+    <div class="navrow"> 
+        
+        <div class="myname">Evan Loiterman UI Developer</div>
+      <div class="rightnav" >
+<a href="#section1" class="anchorLink">section1</a>
+<a href="#section2" class="anchorLink">section2</a>
+<a href="#section3" class="anchorLink">section3</a>
+<a href="#section4" class="anchorLink">section4</a>
+
+      </div>
+    <div class="hamburger"> <span class="showhide">+++</span></div>
+   </div>
+
+
+</section>
+    
+<!-- end navbar -->    
+    
+    <div>Introduction here</div>
+    
+   <!-- first height adjustment remove inline when done testing-->  
+<section class="bg1 parallax" style="height:300px; margin-top:0px">
+
+<div class="section1" >
+
+    <a id="section1"></a>
+<p>this is the FIRST part</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.
+</div>
+
+
+</section>
+<div class="section2" >
+
+    <a id="section2"></a>
+<p>this is the SECOND part</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.
+</div>
+
+
+<section class="bg2 parallax">
+
+<div class="section3" >
+
+    <a id="section3"></a>
+<p>this is the THIRD part</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.
+</div>
+
+
+
+</section>
+<div class="section4" >
+
+    <a id="section4"></a>
+<p>this is the LAST part</p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies.
+</div>
+<!-- Scripts to execute first-->
+    <!-- 2nd parallax script  -->
+<script src="code/parallax.js"></script>
+
+<!-- easing target code ececute function -->
+<script>
+	   $.fn.anchorAnimate.defaults.offset = -50;
+      $(document).ready(function() {
+        $("a.anchorLink").anchorAnimate();
+      });
+    </script>
+
+
+
+</body>
+</html>
